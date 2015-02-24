@@ -1,0 +1,11 @@
+<!-- sign up page view -->
+<div class="form-group">
+	<h1>Create New User</h1> 
+	<%= form_for @user do |f| %>
+	USERNAME<br> <%= f.text_field :username %><br>
+	EMAIL <br><%= f.text_field :email %><br>
+	PASSWORD <br> <%= f.password_field :password %><br>
+	CONFIRM YOUR PASSWORD <br><%= f.password_field :password_confirmation %><br><br>
+	<%= f.submit "Join", :class => "btn btn-info" %>
+	<% end %>
+</div>

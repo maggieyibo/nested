@@ -1,0 +1,167 @@
+  <!-- index page view for when user is logged in -->
+<% if current_user %>
+<div id="map-container">
+  <div id="map-canvas">
+  </div>
+</div>
+<script type="text/javascript">
+function initialize() {
+  var myLatlng;
+  // The current zoom and location of where the map is centerd on
+  navigator.geolocation.getCurrentPosition(function(position) {
+    myLatlng =(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+    console.log(myLatlng);
+  // var myLatlng = makeLatLng(34.05, -118.2);
+      var mapOptions = {
+        zoom: 11,
+        center: myLatlng
+      }
+
+  // Create a map with a canvas
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+
+  // The function to create a longitude and latitude in Google Maps
+  function makeLatLng(latitude, longitude) {
+    return new google.maps.LatLng(latitude, longitude)
+  }
+
+  //The function to create a marker in Google Maps
+  function makeMarker(latitude, longitude) {
+    return new google.maps.Marker({
+      position: makeLatLng(latitude, longitude),
+      map: map,
+      icon:'http://i2.photobucket.com/albums/y23/maggiewang430/5734948b-ced6-4447-8e48-d4dc820d1f4a_zpsf5729f8e.png'
+    });
+  }
+
+  // Add saved longitudes and latitudes to save on the map
+  <% @listings.each do |listing| %>
+
+  var <%= "marker" + listing.id %> = makeMarker(<%= listing.latitude %>, <%= listing.longitude %>);
+  // console.log(listing)
+  var <%= "infoWindow" + listing.id %> = new google.maps.InfoWindow({
+    content: '<span><strong>Address:</strong> <%= listing.address %></span><br> <span><%= listing.city %>, <%= listing.state %> <%= listing.zip %></span><br> <span><strong>Type:</strong> <%= listing.type %></span><br> <span><strong>Bedroom:</strong> <%= listing.num_bed %></span><br> <span><strong>Bathroom:</strong> <%= listing.num_bath %></span><br> <span><strong>Price:</strong> <%= listing.price %></span><br> <span><strong>Description:</strong> <%= listing.description %></span>'
+  });
+
+  google.maps.event.addListener(<%= "marker" + listing.id %>, 'click', function() {
+    <%= "infoWindow" + listing.id %>.open(map,<%= "marker" + listing.id %>);
+    setTimeout(function(){ <%= "infoWindow" + listing.id %>.close(map,<%= "marker" + listing.id %>); }, 2000);
+  });
+  <% end %>
+
+});
+
+}
+
+// Loads Google Map on window load
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<table>
+
+  <tbody>
+    <table class="table table-hover">
+    <% @listings.each do |f| %>
+      <tr>
+        <td><%= f.type %></td>
+        <td><%= f.address %></td>
+        <td><%= f.city.capitalize %> 
+        <td><%= f.state %></td>
+        <td><%= f.zip %></td>
+        <td><%= f.num_bed %></td>
+        <td><%= f.num_bath %></td>
+        <td>$<%= f.price %></td>
+        <td><%= f.description %></td>
+        <td><%= image_tag f.photo.url(:small), height: '150', width: '130' %></td>
+        <td><%= link_to 'See More', listing_path(f), :class => "btn btn-info" %></td>
+      </tr>
+    <% end %>
+  </table>
+  </tbody>
+
+</table>
+<%else%>
+<!-- Landing Page with three slides-->
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#bs-carousel" data-slide-to="1"></li>
+    <li data-target="#bs-carousel" data-slide-to="2"></li>
+  </ol>
+  
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+
+    <div class="item slides active">
+      <div class="slide-1">
+        <div class="hero">
+          <hgroup>
+            <h1>Find your next home</h1>        
+            <%= form_tag listings_path, :method => 'get' do %>
+            <%= text_field_tag :search, params[:search], :placeholder => "ENTER CITY", :style =>"color: black;" %><br>
+            <%= submit_tag "Take Me There", :class => "btn btn-hero btn-lg" %>
+            <% end %>
+          </hgroup>
+        </div>
+      </div>
+    </div>
+
+    <div class="item slides">
+      <div class="slide-2"></div>
+      <div class="hero">        
+        <hgroup>
+          <h1>Join the Community</h1>        
+        </hgroup>  
+        <%= button_to "Sign Up", new_user_path,
+        :class => "btn btn-hero btn-lg", :method => :get %>
+      </div>
+    </div>
+
+    <div class="item slides">
+      <div class="slide-3"></div>
+      <div class="hero">        
+        <hgroup>
+          <h1>Post your Space</h1>        
+        </hgroup>
+        <%= button_to "LOGIN", login_path,
+        :class => "btn btn-hero btn-lg", :method => :get %>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- listing info view for logged in users -->
+
+  <table>
+    <tbody>
+      <table class="table table-hover">
+        <% @listings.each do |f| %>
+        <tr>
+          <td><%= f.type %></td>
+          <td><%= f.address %></td>
+          <td><%= f.city.capitalize %> 
+            <td><%= f.state %></td>
+            <td><%= f.zip %></td>
+            <td><%= f.num_bed %></td>
+            <td><%= f.num_bath %></td>
+            <td>$<%= f.price %></td>
+            <td><%= f.description %></td>
+            <td><%= image_tag f.photo.url(:small), height: '150', width: '130' %></td>
+            <%if current_user %>
+            <td><%= link_to 'See More', listing_path(f), :class => "btn btn-info" %></td>
+            <% else %>
+            <td><%= link_to "Login to see more", login_path, :class => "btn btn-info" %></td>
+            <% end %>
+          </tr>
+          <% end %>
+        </table>
+      </tbody>
+
+    </table>
+    <%end%>
+

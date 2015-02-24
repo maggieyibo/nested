@@ -1,0 +1,16 @@
+ <!-- form for editing a listing -->
+ <form>
+  <%= form_for @listing do |f| %>
+
+  Type: <%= f.text_field :type %><br>
+  City: <%= f.text_field :city %><br>
+  Bedrooms: <%= f.number_field :num_bed %><br>
+  Bathrooms: <%= f.number_field :num_bath %><br>
+  Price: $ <%= f.number_field :price %><br>
+  Description: <%= f.text_area :description %><br>
+  Listing Thumbnail <%= f.file_field :photo, :multiple => true %></br><br>
+  <br>
+  <%= f.submit 'Update' %>
+  
+  <% end %>
+</form>
