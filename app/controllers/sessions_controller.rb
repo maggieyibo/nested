@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
 			flash[:success] = "Login Successful"
 			session[:user_id] = user.id
-			redirect_to user_path(user.id)
+			redirect_to listings_path
 		else
 			flash.now[:danger] = "Unable to Login, Please try again!"
 			render :new

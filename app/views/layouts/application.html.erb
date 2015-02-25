@@ -23,7 +23,8 @@
         <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
             <li><p class="greeting">Welcome back, <%= current_user.username.downcase %></p></li>
-            <a type="button" class="btn btn-warning navbar-btn navbar-right" href="/login">Log Out</a>
+            <a type="button" class="btn btn-success navbar-btn navbar-left" href="/listings/new">Post Your Space</a>
+            <a type="button" class="btn btn-warning navbar-btn navbar-right" href="/logout">Log Out</a>
             <!-- <li><%#= link_to "Log Out", logout_path %></li> -->
             <% else %>
             <li><%= link_to "Log In", '/login' %></li>
@@ -33,42 +34,16 @@
           </ul>
       </div>
     </nav>
-    <!-- <header class="navbar navbar-inverse" role="navigation">
-      <div class="navbar">
-        <%= link_to "DoorKnob", '/listings', id: "logo" %>
-      </div>
-      <nav>
-        <div class="links">
-          <ul class="nav navbar-nav navbar-right">
-            <% if current_user %>
-            <li> Hello <%= current_user.username %></li>
-            <li><%= link_to "Log Out", logout_path %></li>
-            <% else %>
-            <li><%= link_to "Sign Up", '/users/new' %></li>
-            <li><%= link_to "Join Nested",   login_path %></li>
-            <% end %>
-          </ul>
-        </div>
-      </nav>
-    </div> 
-  </header> -->
+    
 
 
   <!-- user sees add listing link if logged in -->
 
-  <div class="container">
-   <% if current_user %>
-   <% flash.each do |key, value| %>
-   <div class="alert alert-<%= key %>" role="alert">
-    <% key %><%= value %>
-  </div>
-  <% end %>
-  <div class ="pager"><%= link_to 'See All Listings', listings_path, :class => "btn btn-info" %>   <%= link_to 'Add A New Listing', new_listing_path, :class => "btn btn-info" %></div>
-  <% else %>
-  <%#= link_to 'login', login_path %>
-  <% end %>
+   
 
   <%= yield %>
+
+ 
   
 
 </body>
