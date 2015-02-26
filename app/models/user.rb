@@ -7,6 +7,9 @@ class User
   field :firstname
   field :lastname
   field :phonenumber
+  field :bio
+  field :age
+  field :personality
   has_many :listings
 
   has_secure_password
