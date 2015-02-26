@@ -11,6 +11,12 @@ class Listing
   field :description, type: String
   field :latitude, type: Float
   field :longitude, type: Float
+  field :parking, type: Boolean
+  field :pets, type: Boolean
+  field :furnished, type: Boolean
+  field :acheater, type: Boolean
+  field :privatebath, type: Boolean
+  field :wifi, type: Boolean
   mount_uploader :photo, ListingPhotoUploader
   embeds_many :photos
   belongs_to :user
