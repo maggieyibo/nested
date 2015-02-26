@@ -2,7 +2,10 @@
 <div class="form-group">
 	<h1>Create New User</h1> 
 	<%= form_for @user do |f| %>
-	USERNAME<br> <%= f.text_field :username %><br>
+	USERNAME<br> <%= f.text_field :username%><br>
+	FIRSTNAME<br> <%= f.text_field :firstname %><br>
+	LASTNAME<br> <%= f.text_field :lastname %><br>
+	PHONENUMBER<br> <%= f.text_field :phonenumber %><br>
 	EMAIL <br><%= f.text_field :email %><br>
 	PASSWORD <br> <%= f.password_field :password %><br>
 	CONFIRM YOUR PASSWORD <br><%= f.password_field :password_confirmation %><br><br>
