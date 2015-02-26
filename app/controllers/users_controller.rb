@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
 	def create
 		#creates a user, after user signs up, redirects to login page.
-		@user = User.new(params.require(:user).permit(:username, :firstname, :lastname, :phonenumber, :email, :password, :password_confirmation))
+		@user = User.new(params.require(:user).permit(:username, :firstname, :lastname, :phonenumber, :email, :age, :personality, :bio, :password, :password_confirmation))
 		
 		if @user.save
                         session[:user_id] = @user.id
