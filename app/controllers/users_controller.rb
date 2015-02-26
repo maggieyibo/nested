@@ -13,7 +13,9 @@ class UsersController < ApplicationController
 		@user = User.new(params.require(:user).permit(:username, :firstname, :lastname, :phonenumber, :email, :password, :password_confirmation))
 		
 		if @user.save
-			redirect_to login_path
+                        session[:user_id] = @user.id
+			redirect_to listings_path 
+
 		else
 			render :new
 		end
