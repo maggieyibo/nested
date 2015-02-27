@@ -28,5 +28,15 @@
 	height: 400px;
 	border-right: 2px dotted grey;
 	font-family: helvetica;
+}
+.modal-title {
+	font-size: 30px;
+	color: tomato;
+}
 
+.greeting {
+	color: black;
+	margin-top: 30px;
+	padding-left: 40px;
+	font-size: 13px;
 }

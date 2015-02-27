@@ -14,7 +14,7 @@
       <% @listings.each do |f| %>
         <div class="listing-each">
           <p><%= f.type %> | <%= f.address %>, <%= f.city.capitalize %>, <%= f.state %> <%= f.zip %> | Bedrooms: <%= f.num_bed %> | Bathrooms: <%= f.num_bath %> | $<strong><%= f.price %></strong></p>
-          <p><%= link_to 'More +', listing_path(f), :class => "btn btn-info btn-sm" %></p> 
+          <p><%= link_to 'More', listing_path(f), :class => "btn btn-info btn-sm" %></p> 
           
 <!--           <p><%#=  image_tag f.photo.url(:small), height: '90', width: '80' %></p> --> 
         </div>

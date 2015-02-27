@@ -7,6 +7,7 @@
   -webkit-user-select: none;  /* Chrome all / Safari all */
   -moz-user-select: none;     /* Firefox all */
   -ms-user-select: none;      /* IE 10+ */
+  // background-color: #f1f1f1;
 }
 
   #logo {
@@ -17,14 +18,18 @@
   }
   //navigation bar
   .navbar-btn {
-    font-family: 'Oxygen', sans-serif;
+    font-family: avenir;
     font-size: 12px;
     margin-top: 10px;
     margin-right: 13px;
     
   }
+
+  .navbar-left {
+    margin-left: 20px;
+  }
   .navbar {
-    font-family: 'Oxygen', sans-serif;
+    font-family: avenir;
     font-size: 15px;
     margin-bottom: 0px;
   }
@@ -39,7 +44,7 @@
     padding-right: 20px;
   }
   .links {
-    font-family: 'Lobster', cursive;
+    font-family: avenir;
     font-size: 25px;
     padding: 20px, 0px, 20px, 30px;
   }
@@ -66,7 +71,7 @@
 body {
   background-color: white;
   width: 100%;
-  font-family: 'Poiret One', cursive;
+  font-family: avenir;
   font-weight: bold;
   font-size: 12px;
 }

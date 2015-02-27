@@ -1,43 +1,50 @@
 <!-- view page for individual listings -->
-  <div id="map-container">
-    <div id="map-canvas">
-      <%= render 'individual_map' %>
-    </div>
+  
+  <div class="col-md-6 maps">
+  	<div id="map-container">
+    	<div id="map-canvas">
+      		<%= render 'individual_map' %>
+    	</div>
+  	</div>
   </div>
-<h1> Listed By </h1>
 
+<div class="col-md-6 listings">
+	<div class="form-group">
+		Type: <%= @listing.type %> <br>
+		Price: $ <%= @listing.price %><br>
+		Bedrooms: <%= @listing.num_bed %>
+		Bathrooms: <%= @listing.num_bath %><br>
+		Pets:<% if @listing.pets == true %> OK <% else %> NOT ALLOWED <% end %><br>
+		Description: <%= @listing.description %><br>
+		Address: <br>
+		<%= @listing.address %><br>
+		<%= @listing.city %>, <%= @listing.state %><%= @listing.zip %><br>
+		Photos: <%= image_tag @listing.photo.url, height: '150', width: '130' %><br>
+		<h3> Listed by </h3>
+		<p> 
+		<%= @user.firstname %>  <%= @user.lastname %> 
+		<%= @user.phonenumber %> 
+		<%= @user.email %> 
+		<%= link_to "see user", user_path(@user.id) %>
+		</p>
+	</div>
 
-<h2> <%= @user.firstname %>  <%= @user.lastname %> </h2>
-<h2> <%= @user.phonenumber %> </h2>
-<h2> <%= @user.email %> </h2>
-<div class="form-group">
-	Type: <%= @listing.type %> <br>
-	Price: $ <%= @listing.price %><br>
-	Bedrooms: <%= @listing.num_bed %>
-	Bathrooms: <%= @listing.num_bath %><br>
-	Pets:<% if @listing.pets == true %> OK <% else %> NOT ALLOWED <% end %><br>
-	Description: <%= @listing.description %><br>
-	Photos: <%= image_tag @listing.photo.url, height: '150', width: '130' %><br>
-	Address: <br>
-	<%= @listing.address %><br>
-	<%= @listing.city %>, <%= @listing.state %><%= @listing.zip %><br>
+		<% @listing.photos.each do |p| %>
+		<%= image_tag p.photo.url, height: '250', width: '230' %>
+		<%#= link_to "Delete this photo", :class => "btn btn-default" %>
+		<% end %>
+		
+	<!-- editing options for logged in user -->
+	
+	<div class="form-group">
+		<% if  @listing.user.id == current_user.id %>
+		<%= link_to "Add Photos", new_listing_photo_path(@listing), :class => "btn btn-info" %>
+		<%= link_to "Edit Listing", edit_listing_path, :class => "btn btn-warning" %>
+		<%= link_to "Remove listing", :listing, method: :delete, data: { confirm: "Are you sure you want to delete this 	listing?"},  :class => "btn btn-danger" %>
+		<% else %>
+		<%= link_to "Back to the list", listings_path, :class => "btn btn-info" %>
+		<% end %>
+	</div>
+	
 </div>
 
-<% @listing.photos.each do |p| %>
-<%= image_tag p.photo.url, height: '250', width: '230' %>
-<%#= link_to "Delete this photo", :class => "btn btn-default" %>
-<% end %>
-
-<!-- editing options for logged in user -->
-
-<div class="form-group">
-	<% if  @listing.user.id == current_user.id %>
-	<%= link_to "Add Photos", new_listing_photo_path(@listing), :class => "btn btn-info" %>
-	<%= link_to "Edit Listing", edit_listing_path, :class => "btn btn-warning" %>
-	<%= link_to "Remove listing", :listing, method: :delete, data: { confirm: "Are you sure you want to delete this listing?"},  :class => "btn btn-danger" %>
-	<% else %>
-	<%= link_to "Back to the list", listings_path, :class => "btn btn-info" %>
-	<% end %>
-</div>
-
-</div>

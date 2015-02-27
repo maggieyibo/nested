@@ -1,0 +1,16 @@
+<!-- sign up page view -->
+<div class="form-group">
+	<!-- <h1 style="color: tomato">Join Us</h1>  -->
+	<%= form_for User.new() do |f| %>
+	
+	First Name<br> <%= f.text_field :firstname %><br>
+	Last Name<br> <%= f.text_field :lastname %><br>
+	Phone<br> <%= f.text_field :phonenumber %><br>
+	Email <br><%= f.text_field :email %><br>
+	Occupation<br> <%= f.text_field :occupation %><br>
+    Select Your Age <br> <%= f.select :age, options_for_select(['18-25','26-35','35+']) %> <br>
+	Password <br> <%= f.password_field :password %><br>
+	Confirm Your Password <br><%= f.password_field :password_confirmation %><br><br>
+	<%= f.submit "Join", :class => "btn btn-info" %>
+	<% end %>
+</div>

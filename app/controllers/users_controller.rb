@@ -22,4 +22,19 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def edit
+      @user = User.find(params[:id])
+  	end
+  	# need to fix this.
+  	# def update
+   #    #saves update listing
+   #    @user = User.find(params[:id])
+  
+   #  	if @user.update(current_user)
+   #   	 redirect_to user_show_path(current_user)
+   #  	else
+   #    	render :edit
+   #  	end
+  	# end
+
 end
