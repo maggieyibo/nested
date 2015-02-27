@@ -5,7 +5,7 @@
           navigator.geolocation.getCurrentPosition(function(position) {
             myLatlng =(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
             console.log(myLatlng);
-          // var myLatlng = makeLatLng(34.05, -118.2);
+      
           var mapOptions = {
             zoom: 11,
             center: myLatlng
@@ -33,7 +33,7 @@
           <% @listings.each do |listing| %>
 
           var <%= "marker" + listing.id %> = makeMarker(<%= listing.latitude %>, <%= listing.longitude %>);
-          // console.log(listing)
+          
           var <%= "infoWindow" + listing.id %> = new google.maps.InfoWindow({
             content: '<span><strong>Address:</strong> <%= listing.address %></span><br> <span><%= listing.city %>, <%= listing.state %> <%= listing.zip %></span><br> <span><strong>Type:</strong> <%= listing.type %></span><br> <span><strong>Bedroom:</strong> <%= listing.num_bed %></span><br> <span><strong>Bathroom:</strong> <%= listing.num_bath %></span><br> <span><strong>Price:</strong> <%= listing.price %></span><br> <span><strong>Description:</strong> <%= listing.description %></span>'
           });

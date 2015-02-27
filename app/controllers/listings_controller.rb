@@ -16,9 +16,6 @@ class ListingsController < ApplicationController
       @user = User.find(@listing.user_id)
   end
 
-  def new
-      @listing = Listing.new
-  end
 
   def create
       @listing = current_user.listings.new(listing_params)

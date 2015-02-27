@@ -3,8 +3,8 @@
 <div class="form-group">
 	<h1>Log In</h1><br>
 <%= form_for :user, url: "/login" do |f| %>
-	<%= f.text_field :username, placeholder: "USERNAME"  %><br><br>
-	<%= f.password_field :password, placeholder: "PASSWORD"%><br><br>
+	<%= f.text_field :email, placeholder: "Email"  %><br><br>
+	<%= f.password_field :password, placeholder: "Password"%><br><br>
 	<%= f.submit "Login", :class => "btn btn-info" %>
 <% end %>
 </div>

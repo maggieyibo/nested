@@ -1,34 +1,3 @@
 <!-- add listing page view -->
 
-<div class="form-group">
-<%= form_for @listing do |f| %>
-
-	<%= f.select :type, options_for_select(["House", "Condo", "Townhouse", "Apartment", "Roomshare", "Studio", "Sublet", "Roomshare"])%><br>
-	<br>
-	<%= f.text_field :address, :placeholder=>"Address" %><br>
-  <br>
-  <%= f.text_field :city, :placeholder=>"City" %><br>
- 	<br>
-  <%= f.text_field :state, :placeholder=>"State" %><br>
-  <br>
-  <%= f.number_field :zip, :placeholder=>"Zipcode" %><br>
-  Bedrooms <br>
- 	<%= f.select :num_bed, options_for_select([0, 1, 2, 3, 4, 5, 6, 7])%><br>
-  Bathrooms <br>
-  <%= f.select :num_bath, options_for_select([0, 1, 2, 3, 4, 5, 6, 7])%><br>
-  <%= f.number_field :price, :placeholder=>"How Much is Rent?" %><br>
-  Parking <%= f.check_box :parking %>      <br>
-  AC/Heater <%= f.check_box :acheater %>    <br>
-  Pets(cat/dog) <%= f.check_box :pets %><br>
-  Furnished <%= f.check_box :furnished %>    <br>
-  Private Bath <%= f.check_box :privatebath %> <br>
-  Wifi <%= f.check_box :wifi %>
-  Description: <br>
-  <%= f.text_area :description, :placeholder=>"Tell us a bit about the place." %><br>
-  6 Photos Minimum 
-  <br><%= f.file_field :photo %><br>
-  
-  <%= f.submit 'Create Listing', :class => "btn btn-info" %>
-  
-<% end %>
-</form>
+<%= render 'listings/form' %>

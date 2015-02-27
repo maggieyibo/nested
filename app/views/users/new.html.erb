@@ -2,14 +2,15 @@
 <div class="form-group">
 	<h1>Create New User</h1> 
 	<%= form_for @user do |f| %>
-	USERNAME<br> <%= f.text_field :username%><br>
+	
 	FIRSTNAME<br> <%= f.text_field :firstname %><br>
 	LASTNAME<br> <%= f.text_field :lastname %><br>
 	PHONENUMBER<br> <%= f.text_field :phonenumber %><br>
 	EMAIL <br><%= f.text_field :email %><br>
-        BIO <br> <%= f.text_area :bio, :maxlength => "140" %>  <br>
-        PERSONALITY(MYERS BRIGG) <br> <%= f.text_field :personality %> <br>
-        AGE <br> <%= f.select :age, options_for_select(['18-25','26-35','35+']) %> <br>
+	OCCUPATION<br> <%= f.text_field :occupation %><br>
+    BIO <br> <%= f.text_area :bio, :maxlength => "140" %>  <br>
+    PERSONALITY(MYERS BRIGG) <br> <%= f.text_field :personality %> <br>
+    AGE <br> <%= f.select :age, options_for_select(['18-25','26-35','35+']) %> <br>
 	PASSWORD <br> <%= f.password_field :password %><br>
 	CONFIRM YOUR PASSWORD <br><%= f.password_field :password_confirmation %><br><br>
 	<%= f.submit "Join", :class => "btn btn-info" %>
