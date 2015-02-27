@@ -6,7 +6,13 @@
   City: <%= f.text_field :city %><br>
   Bedrooms: <%= f.number_field :num_bed %><br>
   Bathrooms: <%= f.number_field :num_bath %><br>
-  Price: $ <%= f.number_field :price %><br>
+  Rent: $ <%= f.number_field :price %><br>
+  Parking <%= f.check_box :parking %>      <br>
+  AC/Heater <%= f.check_box :acheater %>    <br>
+  Pets: <%= f.check_box :pets %><br>
+  Furnished <%= f.check_box :furnished %>    <br>
+  Private Bath <%= f.check_box :privatebath %> <br>
+  Wifi <%= f.check_box :wifi %>
   Description: <%= f.text_area :description %><br>
   Listing Thumbnail <%= f.file_field :photo, :multiple => true %></br><br>
   <br>
@@ -14,3 +20,6 @@
   
   <% end %>
 </form>
+
+
+

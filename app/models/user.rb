@@ -1,12 +1,13 @@
 class User
   include Mongoid::Document
   include ActiveModel::SecurePassword
-  field :username, type: String
+
   field :email, type: String
   field :password_digest, type: String
   field :firstname
   field :lastname
   field :phonenumber
+  field :occupation
   field :bio
   field :age
   field :personality
@@ -15,7 +16,6 @@ class User
   has_secure_password
 
   validates :email, uniqueness: true
-  validates :username, uniqueness: true
   validates :password, confirmation: true
 
 end

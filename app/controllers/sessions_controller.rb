@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
 	def create
 		#user authentication required/added flash messages.
-		user = User.find_by(username: params[:user][:username])
+		user = User.find_by(email: params[:user][:email])
 		if user && user.authenticate(params[:user][:password])
 
 			flash[:success] = "Login Successful"
