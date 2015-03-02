@@ -25,16 +25,14 @@ class UsersController < ApplicationController
 	def edit
       @user = User.find(params[:id])
   	end
-  	# need to fix this.
-  	# def update
-   #    #saves update listing
-   #    @user = User.find(params[:id])
+  	 def update
+          @user = User.find(params[:id])
   
-   #  	if @user.update(current_user)
-   #   	 redirect_to user_show_path(current_user)
-   #  	else
-   #    	render :edit
-   #  	end
-  	# end
+     	if @user.update(params.require(:user).permit(:username, :firstname, :lastname, :occupation, :phonenumber, :email, :age, :personality, :bio, :password, :password_confirmation))
+      	 redirect_to user_path(current_user)
+     	else
+       	render :edit
+     	end
+  	 end
 
 end
