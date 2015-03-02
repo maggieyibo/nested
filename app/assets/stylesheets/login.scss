@@ -36,6 +36,8 @@ html, body{
   padding: 15px;
   color: #fff;
   font-size: 20px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   
   &:after{
     content: "";
@@ -68,7 +70,7 @@ html, body{
   
   input{
     width: 100%;
-    padding: 10px 5px 10px 40px;
+    padding: 10px 5px 10px 15px;
     display: block;
     border: 1px solid #EDEDED;
     border-radius: 4px;

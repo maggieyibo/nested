@@ -1,5 +1,7 @@
+<!-- User profile view page -->
+
 <div class="form-group">
-	<h2> Your Profile </h2>
+	<h2> User Profile </h2>
 	<%= form_for @user do |f| %>
 	
 	First Name<br> <%= @user.firstname %><br>
@@ -10,7 +12,8 @@
     A Little About You <br> <%= @user.bio %>  <br><br>
     Personality (MYERS BRIGG) <br> <%=@user.personality %> <br><br>
     Age <br> <%= @user.age %> <br><br>
-	<%= f.submit "Join", :class => "btn btn-info" %>
+
+	<%#= f.submit "Join", :class => "btn btn-info" %>
 	<% end %>
 <%= link_to 'back to listings', listings_path %> 
 </div>
