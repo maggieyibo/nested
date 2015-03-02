@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+	before_action :login
 	def new
 	end
 

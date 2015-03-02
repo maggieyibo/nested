@@ -1,1 +1,48 @@
+.info {
+	color: white;
+	text-align: center;
+	font-size: 40px;
+	background-color: #bdc3c7;
+	height: 400px;
+	border-right: 2px dotted grey;
+	font-family: helvetica;
+}
 
+.modal-title {
+	font-size: 40px;
+	color: tomato;
+}
+
+.greeting {
+	color: black;
+	margin-top: 30px;
+	padding-left: 40px;
+	font-size: 12px;
+}
+
+.page-title {
+	color: tomato;
+	font-size: 30px;
+}
+.profile {
+	width: 300px;
+	height: 60px;
+	background-color: tomato;
+	border-radius: 4px;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	padding-top: 15px;
+
+}
+.edit_user {
+	padding-left: 40px;
+}
+.form-group{
+  color: #34495e;
+  text-align: left;
+  padding-top: 40px;
+  padding-left: 60px;
+
+
+}
