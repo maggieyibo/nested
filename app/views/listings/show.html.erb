@@ -39,8 +39,8 @@
 	<div class="form-group">
 		<% if  @listing.user.id == current_user.id %>
 		<%= link_to "Add Photos", new_listing_photo_path(@listing), :class => "btn btn-info" %>
-		<%= link_to "Edit Listing", edit_listing_path, :class => "btn btn-warning" %>
-		<%= link_to "Remove listing", :listing, method: :delete, data: { confirm: "Are you sure you want to delete this 	listing?"},  :class => "btn btn-danger" %>
+		<%= link_to "Manage Listing", edit_listing_path, :class => "btn btn-warning" %>
+		<%= link_to "Delete listing", :listing, method: :delete, data: { confirm: "Are you sure you want to delete this 	listing?"},  :class => "btn btn-danger" %>
 		<% else %>
 		<%= link_to "Back to the list", listings_path, :class => "btn btn-info" %>
 		<% end %>
