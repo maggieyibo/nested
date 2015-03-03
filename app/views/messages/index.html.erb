@@ -1,17 +1,26 @@
 <% @messages.each do |v| %> 
- <%= v.sender %>
- <%= v.subject %>
+ Sent by :<%= v.sender %>
+ <br>
+ Subject: <%= v.subject %>
+ <br>
+ <br>
  <%= v.body %>
+ <br>
+ <br>
  <%= form_for Message.new() do |f| %>
 <div id = 'hidden'>
   <%= f.text_field :sender, :value => current_user.firstname + current_user.lastname %>
   <%= f.text_field :senderid, :value => current_user.id %>
   <%= f.text_field :user_id, :value => v.senderid %>
 </div>
-  <%= f.text_field :subject, :value => "Re: #{v.subject}" %>
-  <%= f.text_field :body, :value => "" %>
+Subject:  <%= f.text_field :subject, :value => "Re: #{v.subject}" %>
+<br>
+ <br>
+Body <%= f.text_field :body, :value => "" %>
+  <br>
   <%= f.submit 'reply' %>
  <% end %>
+ <br>
   <%= link_to "delete", "/deletemessages?param1=#{v.id}&param2=#{v.id}" %>
 
 <% end %>

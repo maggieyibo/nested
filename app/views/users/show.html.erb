@@ -17,12 +17,19 @@
 	<% end %>
 </div>
 <%= form_for Message.new() do |f| %>
+<h4> Send A Message </h4>
 <div id = 'hidden'>
 <%= f.text_field :sender, :value => current_user.firstname %>
 <%= f.text_field :user_id, :value =>"#{@user.id}" %>
 <%= f.text_field :senderid, :value => current_user.id %>
 </div>
+Subject
 <%= f.text_field :subject, :value => ''%>
-<%= f.text_field :body, :value => '' %>
-<%= f.submit %>
+<br>
+<br>
+<br>
+Body
+<%= f.text_area :body, :value => '' %>
+<br>
+<%= f.submit 'Send' %>
 <% end %>
