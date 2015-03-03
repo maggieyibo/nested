@@ -24,17 +24,15 @@ class UsersController < ApplicationController
 	def edit
       @user = User.find(params[:id])
   	end
-  	 def update
-          @user = User.find(params[:id])
-  
-     	if @user.update(params.require(:user).permit(:username, :firstname, :lastname, :occupation, :phonenumber, :email, :age, :personality, :bio, :password, :password_confirmation))
-      	 redirect_to user_path(current_user)
-     	else
-       	render :edit
-     	end
-  	 end
-         def messages
-          @messages = current_user.messages.all
-         end
+
+  	def update
+      @user = User.find(params[:id])
+
+     if @user.update(params.require(:user).permit(:username, :firstname, :lastname, :occupation, :phonenumber, :email, :age, :personality, :bio, :password, :password_confirmation))
+      redirect_to user_path(current_user)
+     else
+      render :edit
+     end
+  	end
 
 end
