@@ -7,7 +7,7 @@ def new
 end
 
 def create
-  @message = Message.new(params.require(:message).permit(:sender,:subject,:user_id))
+  @message = Message.new(params.require(:message).permit(:sender,:subject,:user_id,:body))
   @message.sender = current_user.firstname
 
   if @message.save

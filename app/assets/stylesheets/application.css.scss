@@ -5,7 +5,9 @@
   @import "listings";
   @import "login";
   @import "font-awesome";
-
+#hidden {
+  display: none;
+}
   html, body {
   -webkit-user-select: none;  /* Chrome all / Safari all */
   -moz-user-select: none;     /* Firefox all */
