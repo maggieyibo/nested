@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
   end
   def destroy
         Message.find(params[:param1]).destroy
-        redirect_to messages_patwh 
+        redirect_to messages_path 
   end
 
 end

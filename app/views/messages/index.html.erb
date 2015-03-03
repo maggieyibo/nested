@@ -12,6 +12,6 @@
   <%= f.text_field :body, :value => "" %>
   <%= f.submit 'reply' %>
  <% end %>
-  <%= link_to "delete", "/deletemessages?param1=#{m.id}&param2=#{@user.id}" %>
+  <%= link_to "delete", "/deletemessages?param1=#{v.id}&param2=#{v.id}" %>
 
 <% end %>
