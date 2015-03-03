@@ -9,6 +9,7 @@ class Listing
   field :num_bath, type: Integer
   field :price, type: Integer
   field :description, type: String
+  field :available_date, type: Date
   field :latitude, type: Float
   field :longitude, type: Float
   field :parking, type: Boolean
@@ -28,6 +29,7 @@ class Listing
   validates :num_bath, presence: true
   validates :price, presence: true
   validates :description, presence: true
+  validates :available_date, presence: true
 
   def full_address
     return "#{address}, #{city}, #{state}, #{zip}"
