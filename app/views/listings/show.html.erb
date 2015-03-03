@@ -15,10 +15,11 @@
 		Bathrooms: <%= @listing.num_bath %><br>
 		Pets:<% if @listing.pets == true %> OK <% else %> NOT ALLOWED <% end %><br>
 		Description: <%= @listing.description %><br>
+		Date Available: <%= @listing.available_date %>
 		Address: <br>
 		<%= @listing.address %><br>
-		<%= @listing.city %>, <%= @listing.state %><%= @listing.zip %><br>
-		Photos: <%= image_tag @listing.photo.url, height: '150', width: '130' %><br>
+		<%= @listing.city %>, <%= @listing.state %><%= @listing.zip %><br><br>
+		Photos: <br> <%= image_tag @listing.photo.url, height: '150', width: '130' %><br>
 		<h3> Listed by </h3>
 		<p> 
 		<%= @user.firstname %>  <%= @user.lastname %> 
