@@ -1,4 +1,7 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :message do
+    
+  end
+
 
   factory :user do |f|
     f.firstname "Joseph"

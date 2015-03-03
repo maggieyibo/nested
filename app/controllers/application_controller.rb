@@ -13,5 +13,10 @@ class ApplicationController < ActionController::Base
   		redirect_to login_path
   	end
   end
+  def login
+    if current_user
+      redirect_to listings_path
+    end
+  end
 
 end

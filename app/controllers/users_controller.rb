@@ -16,9 +16,8 @@ class UsersController < ApplicationController
 		if @user.save
                         session[:user_id] = @user.id
 			redirect_to listings_path 
-
-		else
-			render :new
+		else 
+			redirect_to new_user_path
 		end
 	end
 
@@ -34,5 +33,8 @@ class UsersController < ApplicationController
        	render :edit
      	end
   	 end
+         def messages
+          @messages = current_user.messages.all
+         end
 
 end

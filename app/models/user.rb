@@ -12,6 +12,7 @@ class User
   field :age
   field :personality
   has_many :listings
+  has_many :messages
 
   has_secure_password
 
