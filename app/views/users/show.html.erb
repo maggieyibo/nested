@@ -16,3 +16,9 @@
 	<%#= f.submit "Join", :class => "btn btn-info" %>
 	<% end %>
 </div>
+<%= form_for Message.new() do |f| %>
+<%= f.text_field :sender, :value => current_user.firstname %>
+<%= f.text_field :user_id, :value =>"#{@user.id}" %>
+<%= f.text_field :subject, :value => ''%>
+<%= f.submit %>
+<% end %>
