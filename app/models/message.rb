@@ -3,5 +3,6 @@ class Message
   field :subject
   field :sender
   field :body
+  field :senderid
   belongs_to :user
 end

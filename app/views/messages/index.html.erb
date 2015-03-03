@@ -2,4 +2,16 @@
  <%= v.sender %>
  <%= v.subject %>
  <%= v.body %>
+ <%= form_for Message.new() do |f| %>
+<div id = 'hidden'>
+  <%= f.text_field :sender, :value => current_user.firstname + current_user.lastname %>
+  <%= f.text_field :senderid, :value => current_user.id %>
+  <%= f.text_field :user_id, :value => v.senderid %>
+</div>
+  <%= f.text_field :subject, :value => "Re: #{v.subject}" %>
+  <%= f.text_field :body, :value => "" %>
+  <%= f.submit 'reply' %>
+ <% end %>
+  <%= link_to "delete", "/deletemessages?param1=#{m.id}&param2=#{@user.id}" %>
+
 <% end %>
