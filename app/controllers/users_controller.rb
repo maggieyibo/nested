@@ -33,5 +33,8 @@ class UsersController < ApplicationController
        	render :edit
      	end
   	 end
+         def messages
+          @messages = current_user.messages.all
+         end
 
 end

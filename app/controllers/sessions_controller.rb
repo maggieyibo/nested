@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-	before_action :login
+	before_action :login, except: [:destroy]
 	def new
 	end
 
