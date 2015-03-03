@@ -18,8 +18,8 @@
 		Description: <%= @listing.description %><br>
 		Address: <br>
 		<%= @listing.address %><br>
-		<%= @listing.city %>, <%= @listing.state %><%= @listing.zip %><br>
-		Photos: <%= image_tag @listing.photo.url, height: '150', width: '130' %><br>
+		<%= @listing.city %>, <%= @listing.state %><%= @listing.zip %><br><br>
+		Photos: <br> <%= image_tag @listing.photo.url, height: '150', width: '130' %><br>
 		<h3> Listed by </h3>
 		<p> 
 		<%= @user.firstname %>  <%= @user.lastname %> 
