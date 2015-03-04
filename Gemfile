@@ -34,6 +34,7 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'geokit'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'fog' #required for s3

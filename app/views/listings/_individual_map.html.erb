@@ -25,7 +25,7 @@
             return new google.maps.Marker({
               position: makeLatLng(latitude, longitude),
               map: map,
-              icon:'http://i2.photobucket.com/albums/y23/maggiewang430/5734948b-ced6-4447-8e48-d4dc820d1f4a_zpsf5729f8e.png'
+              icon:'http://i2.photobucket.com/albums/y23/maggiewang430/house-icon-dark-green-hi_zps900cbd67.png'
             });
           }
 
@@ -39,7 +39,7 @@
 
           google.maps.event.addListener(<%= "marker" + @listing.id %>, 'click', function() {
             <%= "infoWindow" + @listing.id %>.open(map,<%= "marker" + @listing.id %>);
-            setTimeout(function(){ <%= "infoWindow" + @listing.id %>.close(map,<%= "marker" + @listing.id %>); }, 2000);
+            setTimeout(function(){ <%= "infoWindow" + @listing.id %>.close(map,<%= "marker" + @listing.id %>); }, 5000);
           });
 
         });

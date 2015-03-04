@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :users 
   resources :messages
+  get '/deletemessages' => 'messages#destroy'
 
   #root page
   root to: 'listings#index'
