@@ -7,26 +7,23 @@
   <br>
   <%= f.text_field :city, :placeholder=>"City" %><br>
  	<br>
-  <%= f.text_field :state, :placeholder=>"State" %><br>
-  <br>
-  <%= f.number_field :zip, :placeholder=>"Zipcode" %><br>
-  Bedrooms <br>
- 	<%= f.select :num_bed, options_for_select([0, 1, 2, 3, 4, 5, 6, 7])%><br>
-  Bathrooms <br>
-  <%= f.select :num_bath, options_for_select([0, 1, 2, 3, 4, 5, 6, 7])%><br>
-  <%= f.number_field :price, :placeholder=>"How Much is Rent?" %><br>
-  Date Available <br>
-  <%= f.date_field :available_date %>          <br>
-  Parking <%= f.check_box :parking %>          <br>
-  AC/Heater <%= f.check_box :acheater %>       <br>
-  Pets Allowed: <%= f.check_box :pets %>       <br>
-  Furnished <%= f.check_box :furnished %>      <br>
-  Private Bath <%= f.check_box :privatebath %> <br>
-  Wifi <%= f.check_box :wifi %>                <br>
+  State <%= f.select :state, options_for_select(['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'])  %>
+  <%= f.text_field :zip, :placeholder=>"Zipcode" %><br><br>
+  Bedrooms &nbsp;<%= f.select :num_bed, options_for_select([0, 1, 2, 3, 4, 5, 6, 7])%><br><br>
+  Bathrooms &nbsp;<%= f.select :num_bath, options_for_select([0, 1, 2, 3, 4, 5, 6, 7])%><br><br>
+  $ <%= f.number_field :price, :placeholder=>"How Much is Rent?" %><br><br>
+  Date Available: 
+  <%= f.date_field :available_date %>      <br>
+  Parking &nbsp; <%= f.check_box :parking %>&nbsp;&nbsp;
+  AC/Heater: &nbsp;<%= f.check_box :acheater %> &nbsp;&nbsp;
+  Pets Allowed: &nbsp; <%= f.check_box :pets %> <br>
+  Furnished &nbsp;<%= f.check_box :furnished %> &nbsp;&nbsp;
+  Private Bath &nbsp;<%= f.check_box :privatebath %> &nbsp;&nbsp;
+  Wifi &nbsp;<%= f.check_box :wifi %>                <br><br>
   Description: <br>
   <%= f.text_area :description, :placeholder=>"Tell us a bit about the place." %><br>
   6 Photos Minimum 
-  <br><%= f.file_field :photo %><br>
+  <span style:"padding-left: 200px"><br><%= f.file_field :photo %><br></span>
   
   <%= f.submit 'Create Listing', :class => "btn btn-info" %>
   
