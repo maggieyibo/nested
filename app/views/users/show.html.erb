@@ -1,6 +1,6 @@
 <!-- User profile view page -->
 
-<div class="form-group">
+<div class="user-view">
 	<p class="profile"> User Profile </p>
 	<%= form_for @user do |f| %>
 	
@@ -16,12 +16,15 @@
 	<%#= f.submit "Join", :class => "btn btn-info" %>
 	<% end %>
 </div>
-<%= form_for Message.new() do |f| %>
-<div id = 'hidden'>
-<%= f.text_field :sender, :value => current_user.firstname %>
-<%= f.text_field :user_id, :value =>"#{@user.id}" %>
+
+<div class="message">
+	<%= form_for Message.new() do |f| %>
+	<div id = 'hidden'>
+		<%= f.text_field :sender, :value => current_user.firstname %>
+		<%= f.text_field :user_id, :value =>"#{@user.id}" %>
+	</div>
+	<%= f.text_field :subject, :value => ''%>
+	<%= f.text_field :body, :value => '' %>
+	<%= f.submit %>
+	<% end %>
 </div>
-<%= f.text_field :subject, :value => ''%>
-<%= f.text_field :body, :value => '' %>
-<%= f.submit %>
-<% end %>
