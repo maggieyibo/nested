@@ -1,5 +1,5 @@
 <% @messages.each do |v| %> 
- Sent by :<%= v.sender %>
+ Sent by :<%= link_to "#{v.sender}", user_path(v.senderid) %>
  <br>
  Subject: <%= v.subject %>
  <br>
