@@ -1,6 +1,5 @@
 class ListingsController < ApplicationController
 
-		before_action :authorize, except: [:show, :index]
 
   def index
     # city search function for the listings 

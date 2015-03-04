@@ -23,9 +23,15 @@
 		<h3> Listed by </h3>
 		<p> 
 		<%= @user.firstname %>  <%= @user.lastname %> 
+              <% if current_user %>
 		<%= @user.phonenumber %> 
 		<%= @user.email %> 
 		<%= link_to "see user", user_path(@user.id) %>
+              <% else %>
+                
+                <br>
+                 log in to see contact information
+              <% end %>
 		</p>
 	</div>
 
@@ -37,6 +43,7 @@
 	<!-- editing options for logged in user -->
 	
 	<div class="form-group">
+              <% if current_user %>
 		<% if  @listing.user.id == current_user.id %>
 		<%= link_to "Add Photos", new_listing_photo_path(@listing), :class => "btn btn-info" %>
 		<%= link_to "Manage Listing", edit_listing_path, :class => "btn btn-warning" %>
@@ -44,6 +51,7 @@
 		<% else %>
 		<%= link_to "Back to the list", listings_path, :class => "btn btn-info" %>
 		<% end %>
+              <% end %>
 	</div>
 	
 </div>

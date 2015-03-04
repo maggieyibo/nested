@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   get '/deletemessages' => 'messages#destroy'
 
   #root page
-  root to: 'listings#index'
+  root to: 'application#index'
 
 end
