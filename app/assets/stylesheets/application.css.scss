@@ -4,6 +4,7 @@
   @import "listing_modal";
   @import "listings";
   @import "login";
+  @import "users";
   @import "font-awesome";
 
 #hidden {
@@ -210,15 +211,9 @@ input {
   text-align: center;
 }
 
-.new-user {
-  text-align: center;
+
+textarea {
+  height: 165px;
+  width: 200px
 }
-.user-view {
-  padding-left: 50px;
-  padding-top: 50px;
-  text-align: left;
-}
-.message {
-  text-align: right;
-  
-}
+

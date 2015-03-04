@@ -13,31 +13,20 @@
 	color: tomato;
 }
 
+
 .greeting {
 	color: black;
 	margin-top: 30px;
 	padding-left: 40px;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .page-title {
 	color: tomato;
 	font-size: 30px;
 }
-.profile {
-	width: 300px;
-	height: 60px;
-	background-color: tomato;
-	border-radius: 4px;
-	color: white;
-	font-size: 20px;
-	text-align: center;
-	padding-top: 15px;
 
-}
-.edit_user {
-	padding-left: 40px;
-}
+
 .form-group{
   color: #34495e;
   text-align: left;
