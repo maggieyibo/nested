@@ -1,6 +1,6 @@
 <!-- User profile view page -->
 
-<div class="user-view">
+<div class="col-md-6 user-view">
 	<p class="profile"> User Profile </p>
 	<%= form_for @user do |f| %>
 	
@@ -11,26 +11,29 @@
 	Occupation: <%= @user.occupation %><br><br>
     A Little About You <br> <%= @user.bio %>  <br><br>
     Personality (MYERS BRIGG):   <%=@user.personality %> <br><br>
-    Age:   <%= @user.age %> <br><br>
+    Age:   <%= @user.age %> <br><br><br>
     <%= link_to 'back to listings', listings_path, :class =>"btn btn-info" %> 
 	<%#= f.submit "Join", :class => "btn btn-info" %>
 	<% end %>
 </div>
-<%= form_for Message.new() do |f| %>
-<h4> Send A Message </h4>
-<div id = 'hidden'>
-<%= f.text_field :sender, :value => current_user.firstname %>
-<%= f.text_field :user_id, :value =>"#{@user.id}" %>
-<%= f.text_field :senderid, :value => current_user.id %>
+
+<!-- User Messaging Feature -->
+<div class="col-md-6 message">
+	<%= form_for Message.new() do |f| %>
+	<p class="profile-message"> Send A Message </p>
+	<div id= 'hidden'>
+		<%= f.text_field :sender, :value => current_user.firstname %>
+		<%= f.text_field :user_id, :value =>"#{@user.id}" %>
+		<%= f.text_field :senderid, :value => current_user.id %>
+	</div>
+	<p style="text-align: left; padding-left: 50px;">Subject</p>
+	<%= f.text_field :subject, :value => ''%>
+	<br>
+	<br>
+	<p style="text-align: left; padding-left: 50px; ">Body</p>
+	<%= f.text_area :body, :value => '' %>
+	<br><br>	
+	<%= f.submit 'Send', :class=> 'btn btn-info send'%>
+	<% end %>
 </div>
-Subject
-<%= f.text_field :subject, :value => ''%>
-<br>
-<br>
-<br>
-Body
-<%= f.text_area :body, :value => '' %>
-<br>
-<%= f.submit 'Send' %>
-<% end %>
 
