@@ -19,20 +19,21 @@
 		Address: <br>
 		<%= @listing.address %><br>
 		<%= @listing.city %>, <%= @listing.state %><%= @listing.zip %><br><br>
-		Photos: <br> <%= image_tag @listing.photo.url, height: '150', width: '130' %><br>
-		<h3> Listed by </h3>
-		<p> 
+			<p> Listed by </p>
+	
 		<%= @user.firstname %>  <%= @user.lastname %> 
               <% if current_user %>
 		<%= @user.phonenumber %> 
 		<%= @user.email %> 
-		<%= link_to "see user", user_path(@user.id) %>
+		<%= link_to "More User Info", user_path(@user.id) %>
               <% else %>
                 
                 <br>
-                 log in to see contact information
+                 Please Login to See Contact Information
               <% end %>
 		</p>
+		Photos: <br> <%= image_tag @listing.photo.url, height: '150', width: '130' %><br><br>
+	
 	</div>
 
 		<% @listing.photos.each do |p| %>

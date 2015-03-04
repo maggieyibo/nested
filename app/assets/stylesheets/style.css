@@ -1,11 +1,11 @@
 .info {
-	color: white;
+	color: orange;
 	text-align: center;
 	font-size: 40px;
-	background-color: #bdc3c7;
+	background-color: none;
 	height: 400px;
 	border-right: 2px dotted grey;
-	font-family: helvetica;
+	font-family: avenir;
 }
 
 .modal-title {

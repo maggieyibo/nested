@@ -1,5 +1,7 @@
 <!-- Landing Page with three slides-->
-<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="3500" id="bs-carousel">
+
+<!-- only showing first carousel page as landing page for now -->
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="5000" id="bs-carousel">
   <!-- Overlay -->
   <div class="overlay"></div>
 
@@ -7,20 +9,23 @@
   <ol class="carousel-indicators">
     <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
     <li data-target="#bs-carousel" data-slide-to="1"></li>
-    <li data-target="#bs-carousel" data-slide-to="2"></li>
+    <!-- <li data-target="#bs-carousel" data-slide-to="2"></li> -->
   </ol>
   
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
 
     <div class="item slides active">
-      <div class="slide-1"></div>
-      <div class="hero">        
-        <hgroup>
-          <h1>Meet Your Future Roommate(s)</h1>        
-        </hgroup>  
-        <%= button_to "Sign Up Free", new_user_path,
-        :class => "btn btn-hero btn-lg", :method => :get %>
+      <div class="slide-1">
+        <div class="hero"> 
+          <hgroup>
+            <h1>Find Your Next Home</h1>   <br><br>     
+            <%= form_tag listings_path, :method => 'get' do %>
+            <%= text_field_tag :search, params[:search], :placeholder => "ENTER CITY", :style =>"color: black;" %><br><br>
+            <%= submit_tag "Take Me There", :class => "btn btn-hero btn-lg" %>
+            <% end %>
+          </hgroup>       
+        </div>
       </div>
     </div>
 
@@ -28,39 +33,44 @@
       <div class="slide-2">
         <div class="hero">
           <hgroup>
-            <h1>Find Your Next Home</h1>        
-            <%= form_tag listings_path, :method => 'get' do %>
-            <%= text_field_tag :search, params[:search], :placeholder => "ENTER CITY", :style =>"color: black;" %><br>
-            <%= submit_tag "Take Me There", :class => "btn btn-hero btn-lg" %>
-            <% end %>
+            <h1>Post your Space</h1>        
           </hgroup>
+          <%= button_to "Login", login_path,
+          :class => "btn btn-hero btn-lg", :method => :get %>
         </div>
       </div>
     </div>
 
-    <div class="item slides">
-      <div class="slide-3"></div>
-      <div class="hero">        
-        <hgroup>
-          <h1>Post your Space</h1>        
-        </hgroup>
-        <%= button_to "Login", login_path,
-        :class => "btn btn-hero btn-lg", :method => :get %>
+  <!--   <div class="item slides">
+      <div class="slide-3">
+        <div class="hero">   
+          <hgroup>
+            <h1>Meet Your Future Roommate(s)</h1>        
+          </hgroup>  
+          <%#= button_to "Meet Our Members", new_user_path,
+          :class => "btn btn-hero btn-lg", :method => :get %>     
+        </div>
       </div>
-    </div>
+    </div> -->
+
   </div>
 </div>
 
 <div class="info">
   <div class="col-md-4">
-    <h2></h2>
-    <p></p>
-  </div>
-  <div class="col-md-4">
-    <h2>Help</h2>
+  <h2>How It Works </h2>
+  <i class="fa fa-lightbulb-o fa-lg"></i>
+    <p class="info">sign up, found what you like? Start a conversation, get ready to move!</p>
   </div>
   <div class="col-md-4">
     <h2>Why Nested</h2>
+    <i class="fa fa-question fa-lg"></i>
+    <p class="info">it's like craiglist, without the serial killers</p>
+  </div>
+  <div class="col-md-4">
+    <h2>Contact Us</h2>
+    <i class="fa fa-envelope-o"></i>
+    <p>have something to say? talk to us! support@nested.io</p>
   </div>
 </div>
 
