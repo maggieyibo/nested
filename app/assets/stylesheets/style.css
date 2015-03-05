@@ -58,3 +58,8 @@ h2 {
 .fa {
   color: orange;
 }
+
+.message-view {
+	text-align: center;
+	padding-top: 30px;
+}

@@ -1,9 +1,9 @@
 <!-- messaging feature -->
 
-<% @messages.each do |v| %> 
-Sent by :<%= link_to "#{v.sender}", user_path(v.senderid) %>
-<br>
-Subject: <%= v.subject %>
+<div class="message-view">
+<% @messages.each do |v| %> <br>
+<h4>Sent by : <%= link_to "#{v.sender}", user_path(v.senderid) %></h>
+<h4>Subject: <%= v.subject %></h4>
 <br>
 <br>
 <%= v.body %>
@@ -14,15 +14,16 @@ Subject: <%= v.subject %>
 	<%= f.text_field :sender, :value => current_user.firstname + current_user.lastname %>
 	<%= f.text_field :senderid, :value => current_user.id %>
 	<%= f.text_field :user_id, :value => v.senderid %>
-</div>
+</div><br>
 Subject:  <%= f.text_field :subject, :value => "Re: #{v.subject}" %>
 <br>
 <br>
 Body <%= f.text_field :body, :value => "" %>
-<br>
+<br><br>
 <%= f.submit 'reply' %>
 <% end %>
 <br>
 <%= link_to "delete", "/deletemessages?param1=#{v.id}&param2=#{v.id}" %>
 
 <% end %>
+</div>
