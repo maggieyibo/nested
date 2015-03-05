@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require galleria-1.4.2
 //= require_tree .
 //= require bootstrap-sprockets
 

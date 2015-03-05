@@ -7,6 +7,7 @@
   <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyAtMTyEHjwug0bqEL-IEuEKgW3paGNZ0Jk" %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -29,6 +30,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-left">
           <a type="button" class="btn btn-success navbar-btn navbar-left" href="#" data-toggle="modal" data-target="#basicModal">Post Your Space</a>
+           <a type="button" class="btn btn-info navbar-btn navbar-right" href="/listings">See All Listings</a>
 
           <%= render 'listings/listing_modal' %>
           <% else %>
