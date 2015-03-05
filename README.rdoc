@@ -1,28 +1,13 @@
-== README
+Nested is is the final project for General Assembly WDI
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+It is build with Ruby on Rails (version 2.2.1), MongoDB, Jquery, and Bootstrap CSS. 
+Nested is an app that connects roommates, our goal was to build a rental community that helps renters to find their next roommate to share a home with, not just house...add more here. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Features we are working on/to be implemented in the near future: 
+ 1. Improved Messaging feature
+ 2. Improved individual listing page.
+ 3. Working on bettering UX/UI. 
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Contributors: Maggie (https://github.com/maggieyibo) & Joseph (https://github.com/gogojojo)
+

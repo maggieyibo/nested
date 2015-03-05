@@ -1,12 +1,12 @@
+
 .info {
 	text-align: center;
 	font-size: 35px;
 	background-image: url("https://ununsplash.imgix.net/photo-1422479516648-9b1f0b6e8da8?q=75&fm=jpg&s=c5f2b3df2a4c71532b3b354b8766503c");
 	font-family: avenir;
 
-
-
 }
+
 .info-landing {
 	color: grey;
 	width: 350px;
@@ -21,14 +21,6 @@
 	color: tomato;
 }
 
-
-.greeting {
-	color: black;
-	margin-top: 30px;
-	padding-left: 40px;
-	font-size: 14px;
-}
-
 .page-title {
 	color: tomato;
 	font-size: 30px;
@@ -41,14 +33,28 @@
   padding-top: 40px;
   padding-left: 60px;
 
-
 }
 
+// styling for all textareas //
+
+textarea {
+  height: 165px;
+  width: 200px
+}
+
+// landing page search bar //
+#search {
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  border-style: inset;
+  font-size: 17px;
+} 
+
 h2 {
-	color: orange;
+  color: orange;
 }
 
 .fa {
-	color: orange;
+  color: orange;
 }
-

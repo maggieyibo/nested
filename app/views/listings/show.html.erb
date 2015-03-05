@@ -1,5 +1,5 @@
 <!-- view page for individual listings -->
-  
+  <!-- map for individual listing page -->
   <div class="col-md-6 maps">
   	<div id="map-container">
     	<div id="map-canvas">
@@ -25,28 +25,32 @@
 		Photos: <br> <%#= image_tag @listing.photo.url, height: '150', width: '130' %><br><br> -->
 	
 	<!-- </div> -->
-		<div class="galleria" style="height: 500px; width: 600px;">
-        <% @listing.photos.each do |p| %>
-        	<%= image_tag p.photo.url, height: '150', width: '130' %>
-        <% end %>
-      <script>
-        Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.4.2/themes/classic/galleria.classic.js');
-        Galleria.run('.galleria');
-      </script>
-    </div>
-		<%#= link_to "Delete this photo", :class => "btn btn-default" %>
-		<p class="listed-by"> Listed by </p>
+
+	<div class="galleria" style="height: 500px; width: 600px;">
+		<% @listing.photos.each do |p| %>
+		<%= image_tag p.photo.url, height: '150', width: '130' %>
+		<% end %>
+		<script>
+			Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.4.2/themes/classic/galleria.classic.js');
+			Galleria.run('.galleria');
+		</script>
+	</div>
+			<%#= link_to "Delete this photo", :class => "btn btn-default" %>
+	<!-- listed by user info section -->
+
+	<p class="listed-by"> Listed by </p>
 	
-		<%= @user.firstname %>  <%= @user.lastname %> 
-              <% if current_user %>
-		<%= @user.phonenumber %> 
-		<%= @user.email %> 
-		<%= link_to "View Profile", user_path(@user.id) %>
-              <% else %>
-                
-                <br>
-                 Please Login to See Contact Information
-              <% end %>
+	<%= @user.firstname %>  <%= @user.lastname %> 
+	<% if current_user %>
+	<%= @user.phonenumber %> 
+	<%= @user.email %> 
+	<%= link_to "View Profile", user_path(@user.id) %>
+	<% else %>
+
+	<br>
+	Please Login to See Contact Information
+	<% end %>
+	
 	<!-- editing options for logged in user -->
 	
 	<div class="form-group">

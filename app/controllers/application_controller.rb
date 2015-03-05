@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   def index
   end
+
   def current_user
   	@current_user ||= User.find(session[:user_id]['$oid']) if session[:user_id]
   end
@@ -14,6 +15,7 @@ class ApplicationController < ActionController::Base
   		redirect_to login_path
   	end
   end
+  
   def login
     if current_user
       redirect_to listings_path

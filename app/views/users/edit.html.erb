@@ -1,19 +1,18 @@
   <!-- form for editing a user profile -->
 
- <div class="user-view">
- <p class="profile">Edit Your Profile</p>
-  <%= form_for @user do |f| %>
-
-  First Name: <%= f.text_field :firstname %><br><br>
-  Last Name: <%= f.text_field :lastname %><br><br>
-  Email: <%= f.text_field :email %><br><br>
-  Phone: <%= f.text_field :phonenumber %><br><br>
-  Occupation: <%= f.text_field :occupation %><br><br>
-  Myers Brigg Personality Type: <br> <%= f.select :personality, options_for_select(['ISTJ','ISFJ','INFJ','INTJ','ISTP','ISFP','INFP','INTP','ESTP','ESFP','ENFP','ENTP', 'ESTJ','ESFJ','ENFJ','ENTJ']) %> <br><br>
-  About me: <br><%= f.text_area :bio %><br><br>
-  Profile Photo <br><%= f.file_field :photo %></br>
-  <%= f.submit 'Update', :class => "btn btn-info btn-sm" %>
-  <%= link_to "Back to Listings", listings_path, :class => "btn btn-info btn-sm" %>
-  
-  <% end %>
+<div class="user-view">
+   <p class="profile">Edit Your Profile</p>
+      <%= form_for @user do |f| %>
+      First Name: <%= f.text_field :firstname %><br><br>
+      Last Name: <%= f.text_field :lastname %><br><br>
+      Email: <%= f.text_field :email %><br><br>
+      Phone: <%= f.text_field :phonenumber %><br><br>
+      Occupation: <%= f.text_field :occupation %><br><br>
+      Myers Brigg Personality Type: <br> <%= f.select :personality, options_for_select(['ISTJ','ISFJ','INFJ','INTJ','   ISTP','ISFP','INFP','INTP','ESTP','ESFP','ENFP','ENTP', 'ESTJ','ESFJ','ENFJ','ENTJ']) %> <br><br>
+      About me: <br><%= f.text_area :bio %><br><br>
+      Profile Photo <br><%= f.file_field :photo %></br>
+      <%= f.submit 'Update', :class => "btn btn-info btn-sm" %>
+      <%= link_to "Back to Listings", listings_path, :class => "btn btn-info btn-sm" %>
+    
+   <% end %>
 </div>

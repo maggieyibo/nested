@@ -1,3 +1,4 @@
+/// styling for listing page ///
 .listings {
 	background-color: white;
 	padding-top: 25px;
@@ -6,19 +7,28 @@
 	height: 600px;
 
 }
+
 .ovaflowing {
 	height: 590px;
 	overflow-y: scroll;
 }
+
 .listing-each {
 	background-color: #f2f2f2;
 	border-radius: 4px;
 
 }
+
 .listing-each:hover {
 	background-color: #f8f8f8;
 
 }
+
+.listed-by {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
 .maps {
 	margin: 10px 10px 20px 10px;
 }

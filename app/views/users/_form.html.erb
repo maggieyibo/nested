@@ -1,4 +1,5 @@
 <!-- sign up page view -->
+
 <div class="new-user">
 	<!-- <h1 style="color: tomato">Join Us</h1>  -->
 	<%= form_for User.new() do |f| %>
@@ -13,4 +14,5 @@
 	Confirm Your Password <br><%= f.password_field :password_confirmation %><br><br>
 	<%= f.submit "Join", :class => "btn btn-info" %>
 	<% end %>
+	
 </div>
