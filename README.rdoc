@@ -1,7 +1,7 @@
 Nested is is the final project for General Assembly WDI
 
 It is build with Ruby on Rails (version 2.2.1), MongoDB, Jquery, and Bootstrap CSS. 
-Nested is an app that connects roommates, our goal was to build a rental community that helps renters to find their next roommate to share a home with, not just house...add more here. 
+Nested is an app that connects roommates, our goal was to build a rental community that helps renters to find their next roommate to share a home with...add more here. 
 
 Features we are working on/to be implemented in the near future: 
  1. Improved Messaging feature
