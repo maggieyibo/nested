@@ -61,7 +61,7 @@
   //google maps
 
   #map-container {
-   height: 500px;
+   height: 600px;
    width: 100%;
    border-radius: 6px;
    border-color: grey;
@@ -72,7 +72,7 @@
    border-width: 7px;
  }
  #map-canvas {
-   height: 488px;
+   height: 588px;
    width: 100%;
  }
 
@@ -111,23 +111,23 @@ input {
   opacity: 1;
 }
 
-// .fade-carousel .carousel-inner .item.active .hero {
-//     opacity: 1;
-//     -webkit-transition: 2s all ease-in-out .1s;
-//        -moz-transition: 2s all ease-in-out .1s; 
-//         -ms-transition: 2s all ease-in-out .1s; 
-//          -o-transition: 2s all ease-in-out .1s; 
-//             transition: 2s all ease-in-out .1s;    
-// }
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s; 
+        -ms-transition: 2s all ease-in-out .1s; 
+         -o-transition: 2s all ease-in-out .1s; 
+            transition: 2s all ease-in-out .1s;    
+}
 
-// .fade-carousel .carousel-inner .item .hero {
-//     opacity: 0;
-//     -webkit-transition: 2s all ease-in-out .1s;
-//        -moz-transition: 2s all ease-in-out .1s; 
-//         -ms-transition: 2s all ease-in-out .1s; 
-//          -o-transition: 2s all ease-in-out .1s; 
-//             transition: 2s all ease-in-out .1s; 
-// }
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s; 
+        -ms-transition: 2s all ease-in-out .1s; 
+         -o-transition: 2s all ease-in-out .1s; 
+            transition: 2s all ease-in-out .1s; 
+}
 
 //hero headers
 .hero {
@@ -228,3 +228,8 @@ textarea {
   border-style: inset;
   font-size: 17px;
 } 
+
+.listed-by {
+  margin-top: 10px;
+  font-size: 12px;
+}

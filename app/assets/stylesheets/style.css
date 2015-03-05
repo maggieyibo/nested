@@ -1,8 +1,10 @@
 .info {
 	text-align: center;
 	font-size: 35px;
-	background-color: none;
+	background-image: url("https://ununsplash.imgix.net/photo-1422479516648-9b1f0b6e8da8?q=75&fm=jpg&s=c5f2b3df2a4c71532b3b354b8766503c");
 	font-family: avenir;
+
+
 
 }
 .info-landing {
@@ -10,6 +12,7 @@
 	width: 350px;
 	margin-left: 40px;
 	font-size: 25px;
+	height: 250px;	
 
 }
 
