@@ -19,7 +19,7 @@
       <div class="slide-1">
         <div class="hero"> 
           <hgroup>
-            <h1>Find Your Next Home</h1>   <br><br>     
+            <h1>Find Your Home</h1>   <br><br>     
             <%= form_tag listings_path, :method => 'get' do %>
             <%= text_field_tag :search, params[:search], :placeholder => "ENTER CITY", :style =>"color: black;" %><br><br>
             <%= submit_tag "Take Me There", :class => "btn btn-hero btn-lg" %>
@@ -58,19 +58,19 @@
 
 <div class="info">
   <div class="col-md-4">
-  <h2>How It Works </h2>
+  <h2>How It Works</h2>
   <i class="fa fa-lightbulb-o fa-lg"></i>
-    <p class="info">sign up, found what you like? Start a conversation, get ready to move!</p>
+    <p class="info-landing">sign up, <br> found what you like?<br> Start a conversation, <br> get ready to move!</p>
   </div>
   <div class="col-md-4">
     <h2>Why Nested</h2>
     <i class="fa fa-question fa-lg"></i>
-    <p class="info">it's like craiglist, without the serial killers</p>
+    <p class="info-landing">it's like craiglist,<br> without the serial killers</p>
   </div>
   <div class="col-md-4">
     <h2>Contact Us</h2>
     <i class="fa fa-envelope-o"></i>
-    <p>have something to say? talk to us! support@nested.io</p>
+    <p class="info-landing">have something to say? <br> talk to us! <br> support@nested.io</p>
   </div>
 </div>
 
