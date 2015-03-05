@@ -19,9 +19,9 @@
       <div class="slide-1">
         <div class="hero"> 
           <hgroup>
-            <h1>Find Your Home</h1>   <br><br>     
+            <h1>Find A Roommate</h1>   <br><br>     
             <%= form_tag listings_path, :method => 'get' do %>
-            <%= text_field_tag :search, params[:search], :placeholder => "ENTER CITY", :style =>"color: black;" %><br><br>
+            <%= text_field_tag :search, params[:search], :placeholder => "Where Do You Want to Live?", :style =>"color: black;" %><br><br>
             <%= submit_tag "Take Me There", :class => "btn btn-hero btn-lg" %>
             <% end %>
           </hgroup>       
