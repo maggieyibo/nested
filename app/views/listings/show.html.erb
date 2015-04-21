@@ -1,29 +1,29 @@
 <!-- view page for individual listings -->
-  <!-- map for individual listing page -->
-  <div class="col-md-6 maps">
-  	<div id="map-container">
-    	<div id="map-canvas">
-      		<%= render 'individual_map' %>
-    	</div>
-  	</div>
-  </div>
+<!-- map for individual listing page -->
+<div class="col-md-6 maps">
+	<div id="map-container">
+		<div id="map-canvas">
+			<%= render 'individual_map' %>
+		</div>
+	</div>
+</div>
 
 <div class="col-md-6 listings">
 	<!-- <div class="form-group"> -->
-		<!-- Type: <%#= @listing.type %> <br>
-		Price: $ <%#= @listing.price %><br>
-		Bedrooms: <%#= @listing.num_bed %>
-		Bathrooms: <%#= @listing.num_bath %><br>
-		Pets:<%# if @listing.pets == true %> OK <%# else %> NOT ALLOWED <%# end %><br>
-		Description: <%#= @listing.description %><br>
-		Date Available: <%#= @listing.available_date %>
-		Address: <br>
-		<%#= @listing.address %><br>
-		<%#= @listing.city %>, <%#= @listing.state %><%#= @listing.zip %><br><br> -->
+	<!-- Type: <%#= @listing.type %> <br>
+	Price: $ <%#= @listing.price %><br>
+	Bedrooms: <%#= @listing.num_bed %>
+	Bathrooms: <%#= @listing.num_bath %><br>
+	Pets:<%# if @listing.pets == true %> OK <%# else %> NOT ALLOWED <%# end %><br>
+	Description: <%#= @listing.description %><br>
+	Date Available: <%#= @listing.available_date %>
+	Address: <br>
+	<%#= @listing.address %><br>
+	<%#= @listing.city %>, <%#= @listing.state %><%#= @listing.zip %><br><br> -->
 
-		<!-- </p>
-		Photos: <br> <%#= image_tag @listing.photo.url, height: '150', width: '130' %><br><br> -->
-	
+	<!-- </p>
+	Photos: <br> <%#= image_tag @listing.photo.url, height: '150', width: '130' %><br><br> -->
+
 	<!-- </div> -->
 
 	<div class="galleria" style="height: 500px; width: 600px;">
@@ -35,26 +35,24 @@
 			Galleria.run('.galleria');
 		</script>
 	</div>
-			<%#= link_to "Delete this photo", :class => "btn btn-default" %>
+	<%#= link_to "Delete this photo", :class => "btn btn-default" %>
 	<!-- listed by user info section -->
-
-	<p class="listed-by"> Listed by </p>
-	
-	<%= @user.firstname %>  <%= @user.lastname %> 
-	<% if current_user %>
-	<%= @user.phonenumber %> 
-	<%= @user.email %> 
-	<%= link_to "View Profile", user_path(@user.id) %>
-	<% else %>
-
-	<br>
-	Please Login to See Contact Information
-	<% end %>
-	
+	<div class="lister">
+		<p class="listed-by"> Listed by
+		<%= @user.firstname %>  <%= @user.lastname %> 
+		<% if current_user %>
+		<%= @user.phonenumber %> 
+		<%= @user.email %> 
+		<%= link_to "View Profile", user_path(@user.id) %>
+		<% else %>
+		<br></p>
+		Login to Send <%= @user.firstname %> a Message
+		<% end %>
+	</div>
 	<!-- editing options for logged in user -->
 	
 	<div class="form-group">
-              <% if current_user %>
+		<% if current_user %>
 		<% if  @listing.user.id == current_user.id %>
 		<%= link_to "Add Photos", new_listing_photo_path(@listing), :class => "btn btn-info" %>
 		<%= link_to "Manage Listing", edit_listing_path, :class => "btn btn-warning" %>
@@ -62,7 +60,7 @@
 		<% else %>
 		<%= link_to "Back to the list", listings_path, :class => "btn btn-info" %>
 		<% end %>
-              <% end %>
+		<% end %>
 	</div>
 	
 </div>

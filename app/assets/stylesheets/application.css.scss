@@ -44,6 +44,7 @@
   }
 
   .navbar {
+    background-color: black;
     font-family: avenir;
     font-size: 15px;
     margin-bottom: 0px;
@@ -69,6 +70,10 @@
     padding: 20px, 0px, 20px, 30px;
   }
 
+  .divider {
+    color: tomato;
+    font-weight: 300;
+  }
   // google maps //
 
   #map-container {
@@ -142,6 +147,7 @@ input {
   transition: 2s all ease-in-out .1s; 
 }
 
+
 //hero headers
 .hero {
   position: absolute;
@@ -165,8 +171,6 @@ input {
   padding: 0;
 
 }
-
-
 
 //Overlay          
 
@@ -200,7 +204,7 @@ input {
 {
   height: 100vh;
   background-size: cover;
-  background-position: center center;
+  // background-position: center center;
   background-repeat: no-repeat;
 }
 .fade-carousel .slides .slide-1 {

@@ -8,10 +8,10 @@
 	Last Name: <%= @user.lastname %><br>
 	Phone: <%= @user.phonenumber %><br>
 	Email: <%= @user.email %><br>
-	Occupation: <%= @user.occupation %><br><br>
-    A Little About You <br> <%= @user.bio %>  <br><br>
-    Personality (MYERS BRIGG):   <%=@user.personality %> <br><br>
-    Age:   <%= @user.age %> <br><br><br>
+	Occupation: <%= @user.occupation %><br>
+	Age:   <%= @user.age %> <br>
+	Personality (MYERS BRIGG):   <%=@user.personality %> <br><br>
+    A Little About You: <br> <%= @user.bio %>  <br><br><br>
     <%= link_to 'back to listings', listings_path, :class =>"btn btn-info" %> 
 	<%#= f.submit "Join", :class => "btn btn-info" %>
 	<% end %>

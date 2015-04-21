@@ -10,6 +10,7 @@
       Occupation: <%= f.text_field :occupation %><br><br>
       Myers Brigg Personality Type: <br> <%= f.select :personality, options_for_select(['ISTJ','ISFJ','INFJ','INTJ','   ISTP','ISFP','INFP','INTP','ESTP','ESFP','ENFP','ENTP', 'ESTJ','ESFJ','ENFJ','ENTJ']) %> <br><br>
       About me: <br><%= f.text_area :bio %><br><br>
+      Age: <br><%= f.select :age, options_for_select(['18-25','26-35','35+']) %><br><br>
       Profile Photo <br><%= f.file_field :photo %></br>
       <%= f.submit 'Update', :class => "btn btn-info btn-sm" %>
       <%= link_to "Back to Listings", listings_path, :class => "btn btn-info btn-sm" %>
