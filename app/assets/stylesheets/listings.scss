@@ -39,6 +39,38 @@
 }
 .lister {
 	text-align: center;
+	margin-top: -10px;
 
+}
+
+.backbutton {
+	z-index: 99;
+	margin-top: -60px;
+}
+
+.galleria-image {
+	overflow: hidden;
+  	position: relative;
+  	visibility: visible;
+  	width: 40px;
+  	height: 40px;
+
+}
+
+.galleria-layer {
+	width: 300px;
+	height: 300px;
+
+}
+
+.galleria-theme-classic {
+	width: 600px;
+  	height: 500px !important;
+}
+
+.galleria-container {
+	margin-top: 16px;
+	border-radius: 7px;
+	border: 6px solid grey;
 }
 

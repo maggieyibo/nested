@@ -26,7 +26,7 @@
 
 	<!-- </div> -->
 
-	<div class="galleria" style="height: 500px; width: 600px;">
+	<div class="galleria" style="height: 500px; width: 600px; z-index: 99; position: relative;">
 		<% @listing.photos.each do |p| %>
 		<%= image_tag p.photo.url, height: '150', width: '130' %>
 		<% end %>
@@ -58,7 +58,7 @@
 		<%= link_to "Manage Listing", edit_listing_path, :class => "btn btn-warning" %>
 		<%= link_to "Delete listing", :listing, method: :delete, data: { confirm: "Are you sure you want to delete this listing?"},  :class => "btn btn-danger" %>
 		<% else %>
-		<%= link_to "Back to the list", listings_path, :class => "btn btn-info" %>
+		<%= link_to "Back to the list", listings_path, :class => "backbutton btn btn-info" %>
 		<% end %>
 		<% end %>
 	</div>
